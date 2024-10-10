@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { Component, NgModule } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiConfig } from '../../Enviroment/api.config';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string | null = null;
 
-  private apiURL: string = 'http://localhost:8083'; // Should be within the class
+  private apiURL: string = ApiConfig.apiURL // Should be within the class
 
   constructor(private http: HttpClient, private router: Router) {}
 
