@@ -44,6 +44,10 @@ export class HomeComponent {
     }
   }
 
+  notice(){
+    this.router.navigate(['/Test']); 
+  }
+
   goToUser() {
     if (this.role === 'USER') {
       this.router.navigate(['/user']); // Navigate to the user component if role is "USER"
