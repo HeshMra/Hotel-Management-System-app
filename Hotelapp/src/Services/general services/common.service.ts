@@ -1,6 +1,6 @@
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { ApiConfig } from '../../Enviroment/api.config';
 
 @Injectable({
@@ -8,19 +8,20 @@ import { ApiConfig } from '../../Enviroment/api.config';
 })
 export class CommonService {
 
-  // constructor(private http: HttpClient) { }
+  private apiURL: string = ApiConfig.apiURL;
 
-  // private apiURL: string = ApiConfig.apiURL 
+  constructor(private http: HttpClient) { }
 
+  //save inquiry details
+  saveInquiryDetails(inquiry: any, options: { headers: HttpHeaders }): Observable<any> {
+    const url = `${this.apiURL}/api/v1/inquiry/save`;
+    return this.http.post<any>(url, inquiry, options)
+  }
 
-  // getAdminDetails(): Observable<any> { // Return an Observable
-  //   const url= `${this.apiURL}/api/v1/account/my-account`;
-  //   return this.http.get<any>(url);
-  // }
+  //get admin account details
+  getAdminDetails(options: { responseType: 'text', headers: HttpHeaders }): Observable<any> {
+    const url = `${this.apiURL}/api/v1/account/my-account`;
+    return this.http.get(url, { headers: options.headers, responseType: options.responseType });
+  }
 
-  // getNoticeDetails(): Observable<any> { // Return an Observable
-  //   const url= `${this.apiURL}/api/v1/notice/my-notice`;
-  //   return this.http.get<any>(url);
-  // }
-  
 }

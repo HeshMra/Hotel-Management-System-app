@@ -24,18 +24,6 @@ export class AdminComponent implements OnInit {
   }
 
 
-  // getAdminData() {
-  //   this.commonservice.getAdminDetails()
-  //     .subscribe(
-  //       (data: any) => {  // Since the backend returns a string, just assign it directly
-  //         this.admindetails = data;  // No need for data.body[0]
-  //         console.log('Admin details:', this.admindetails); // Log the plain string response
-  //       },
-  //       (error: any) => {  
-  //         console.error('Error fetching data:', error); // Handle error
-  //       }
-  //     );
-  // }
 
   getAdminData() {
 
@@ -49,7 +37,8 @@ export class AdminComponent implements OnInit {
 
       
     // Make the HTTP GET request to the backend
-    this.http.get(`${this.apiURL}/api/v1/account/my-account`, { responseType: 'text', headers }).subscribe({
+    this.commonservice.getAdminDetails({ responseType: 'text', headers })
+    .subscribe({
       next: (response: string) => {
         console.log(response); // Log the response to the console
         this.admindetails = response; // Optionally, store the response in a variable
@@ -59,6 +48,4 @@ export class AdminComponent implements OnInit {
       }
     });
   }
-
-
 }

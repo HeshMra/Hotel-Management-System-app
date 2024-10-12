@@ -65,4 +65,12 @@ export class HomeComponent {
     this.router.navigate(['/login']); // Redirect to the login page
   }
 
+  addInquiry(){
+    if (this.role === 'USER') {
+      this.router.navigate(['/add_inquiry']); // Navigate to the inquiry component if role is "USER"
+    } else {
+      this.errorMessage = 'Access denied. Users only.';
+    }
+  }
+
 }
