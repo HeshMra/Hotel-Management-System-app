@@ -19,21 +19,21 @@ export class AuthService {
         return false;
     }
 
-        // Check if the user has the 'USER' role
-        isUser(): boolean {
-            const token = localStorage.getItem('token');
-            if (token) {
-                const decodedToken: any = jwtDecode(token);
-                return decodedToken.roles && decodedToken.roles.includes('USER'); // Check for the 'USER' role
-            }
-            return false;
+    // Check if the user has the 'USER' role
+    isUser(): boolean {
+        const token = localStorage.getItem('token');
+        if (token) {
+            const decodedToken: any = jwtDecode(token);
+            return decodedToken.roles && decodedToken.roles.includes('USER'); // Check for the 'USER' role
         }
-    
-        // Optional: You can add an isAuthenticated() method to check if the user is logged in
-        isAuthenticated(): boolean {
-            const token = localStorage.getItem('token');
-            return !!token; // Return true if token exists
-        }
+        return false;
+    }
 
-   
+    // Optional: You can add an isAuthenticated() method to check if the user is logged in
+    isAuthenticated(): boolean {
+        const token = localStorage.getItem('token');
+        return !!token; // Return true if token exists
+    }
+
+
 }
