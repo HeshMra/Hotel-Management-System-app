@@ -4,15 +4,15 @@
     </div>
 
     <div class="nav-items">
-        <p>Home</p>
-        <p *ngIf="authservice.isAdmin()">Admin Dashboard</p>
-        <p *ngIf="authservice.isUser()">User Dashboard</p>
-        <p>Inquiries</p>
-        <p>Notices</p>
+        <p (click)="home()">Home</p>
+        <p *ngIf="authservice.isAdmin()" (click)="goToAdmin()">Admin Dashboard</p>
+        <p *ngIf="authservice.isUser()" (click)="goToUser()">User Dashboard</p>
+        <p *ngIf="authservice.isUser()" (click)="addInquiry()">Inquiries</p>
+        <p (click)="notice()">Notices</p>
     </div>
 
     <div class="nav-buttons">
-        <button class="btn1">Login</button>
-        <button class="btn1">Logout</button>
+        <button class="btn1" (click)="login()">Login</button>
+        <button class="btn1" (click)="logout()">Logout</button>
     </div>
 </div>
