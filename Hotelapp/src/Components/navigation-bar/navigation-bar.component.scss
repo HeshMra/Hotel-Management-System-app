@@ -25,9 +25,12 @@
     cursor: pointer;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:medium;
-    color: #b68d40;
-  
-  
+    color: #b68d40; 
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+.nav-items p:hover {
+    color: white; /* Change color to white on hover */
 }
 
 .nav-buttons{
