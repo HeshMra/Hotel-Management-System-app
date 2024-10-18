@@ -1,0 +1,18 @@
+<div class="main-bar">
+    <div class="logo">
+        <img src="../../assets/logo.png" alt="" class="image-logo">
+    </div>
+
+    <div class="nav-items">
+        <p (click)="home()">Home</p>
+        <p *ngIf="authservice.isAdmin()" (click)="goToAdmin()">Admin Dashboard</p>
+        <p *ngIf="authservice.isUser()" (click)="goToUser()">User Dashboard</p>
+        <p *ngIf="authservice.isUser()" (click)="addInquiry()">Inquiries</p>
+        <p (click)="notice()">Notices</p>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="btn1" (click)="login()">Login</button>
+        <button class="btn1" (click)="logout()">Logout</button>
+    </div>
+</div>
