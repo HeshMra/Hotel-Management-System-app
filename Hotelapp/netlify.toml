@@ -1,0 +1,10 @@
+[build]
+  # Define the build command
+  command = "npm run build"
+  # Define the folder to publish (where the build output is located)
+  publish = "dist/hotelapp/browser"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
