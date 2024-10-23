@@ -27,5 +27,10 @@
         </div>
 
         <button type="submit" class="btn-submit" [disabled]="!inquiryForm.form.valid">Submit Inquiry</button>
+
+        <!-- Loading Spinner -->
+        <div *ngIf="loading" class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
     </form>
 </div>

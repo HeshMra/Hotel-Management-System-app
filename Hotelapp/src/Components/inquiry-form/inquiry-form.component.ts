@@ -21,8 +21,13 @@ export class InquiryFormComponent {
   inquiry: any = {};
 
 
+
+  loading: boolean = false; // Add this flag to your component
   onSubmit() {
     console.log("this inquiry details", this.inquiry)
+
+    // Set the loading flag to true to show the loading spinner
+    this.loading = true;
 
     // Retrieve the JWT token from local storage or any other storage method
     const token = localStorage.getItem('token'); // Adjust according to your token storage method
@@ -36,11 +41,20 @@ export class InquiryFormComponent {
       .subscribe(
         (response) => {
           console.log('Inquiry saved successfully:', response);
+
+          // Set the loading flag to true to show the loading spinner
+          this.loading = false;
+
+          alert("Inquiry saved successfully");
           // You can display a success message or redirect
         },
         (error) => {
           console.error('Error saving inquiry:', error);
           // You can display an error message
+
+          // Hide the loading spinner even if there is an error
+          this.loading = false;
+
         }
       );
 
