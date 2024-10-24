@@ -9,7 +9,7 @@ import { ApiConfig } from '../../Enviroment/api.config';
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [FormsModule, HttpClientModule, CommonModule,RouterModule],
+  imports: [FormsModule, HttpClientModule, CommonModule, RouterModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss'
 })
@@ -21,9 +21,12 @@ export class SignUpComponent {
 
   signupData: any = {};
 
-
+  loading: boolean = false; // Add this flag to your component
   onSubmit(form: any) {
     if (form.valid) {
+
+      // Set the loading flag to true to show the loading spinner
+      this.loading = true;
 
       // Set role to "USER" by default
       this.signupData.role = 'USER';
@@ -34,6 +37,9 @@ export class SignUpComponent {
           (response) => {
             console.log('Inquiry saved successfully:', response);
             alert("User Registered successfully");
+
+            // Set the loading flag to true to show the loading spinner
+            this.loading = false;
             // You can display a success message or redirect
           },
           (error) => {

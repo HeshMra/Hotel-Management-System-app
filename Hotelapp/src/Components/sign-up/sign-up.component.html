@@ -25,9 +25,15 @@
 
             <div class="register">
                 <p>already have an Account? <a [routerLink]="['/login']" class="signup-link">
-                  login Now!
-                </a></p>
-              </div>
+                        login Now!
+                    </a></p>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div *ngIf="loading" class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+
         </form>
     </div>
 </div>
