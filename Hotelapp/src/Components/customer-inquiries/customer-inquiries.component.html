@@ -1,0 +1,30 @@
+<h2>Customer-inquiries</h2>
+
+<div>
+    <table>
+      <thead>
+        <tr>
+          <th>Inquiry ID</th>
+          <th>Customer Name</th>
+          <th>Customer Address</th>
+          <th>NIC</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inquiry of paginatedInquiry">
+          <td>{{ inquiry.inquiryId }}</td>
+          <td>{{ inquiry.customerName }}</td>
+          <td>{{ inquiry.customerAddress }}</td>
+          <td>{{ inquiry.nic }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Pagination Controls -->
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+  </div>
+  

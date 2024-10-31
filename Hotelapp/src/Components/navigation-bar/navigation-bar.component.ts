@@ -71,6 +71,15 @@ export class NavigationBarComponent {
     }
   }
 
+  customerInquiries() {
+    if (this.role === 'ADMIN') {
+      this.router.navigate(['/customer-inquiries']); 
+    } else {
+      this.errorMessage = 'Access denied. Admins only.';
+    }
+  }
+ 
+
   
   home(){
     this.router.navigate(['/Home']);

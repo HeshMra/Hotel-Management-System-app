@@ -24,4 +24,11 @@ export class CommonService {
     return this.http.get(url, { headers: options.headers, responseType: options.responseType });
   }
 
+  
+  //get all inquiry  details
+  getInquiryDetails(options: {headers: HttpHeaders }): Observable<any> {
+    const url = `${this.apiURL}/api/v1/inquiry/all-inquiries`;
+    return this.http.get(url, { headers: options.headers });
+  }
+
 }

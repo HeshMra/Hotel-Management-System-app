@@ -8,6 +8,7 @@
         <p *ngIf="authservice.isAdmin()" (click)="goToAdmin()">Admin Dashboard</p>
         <p *ngIf="authservice.isUser()" (click)="goToUser()">User Dashboard</p>
         <p *ngIf="authservice.isUser()" (click)="addInquiry()">Inquiries</p>
+        <p *ngIf="authservice.isAdmin()" (click)="customerInquiries()" >Customer Inquiries</p>
         <p (click)="notice()">Notices</p>
     </div>
 

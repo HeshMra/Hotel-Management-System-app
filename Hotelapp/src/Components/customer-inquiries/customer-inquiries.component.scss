@@ -1,0 +1,37 @@
+/* Basic Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #afacac;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #b68d40;
+  }
+  
+  /* Pagination Controls Styling */
+  .pagination {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .pagination span {
+    align-self: center;
+  }
+  
+  .h2{
+    font-weight: lighter;
+  }

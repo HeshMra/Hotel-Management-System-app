@@ -7,6 +7,7 @@ import { AuthGuard } from '../Services/AuthServices/auth.guard';
 import { TestComponent } from '../Components/test/test.component';
 import { InquiryFormComponent } from '../Components/inquiry-form/inquiry-form.component';
 import { SignUpComponent } from '../Components/sign-up/sign-up.component';
+import { CustomerInquiriesComponent } from '../Components/customer-inquiries/customer-inquiries.component';
 
 export const routes: Routes = [
     { path: 'Home', component: HomeComponent },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'add_inquiry', component: InquiryFormComponent, canActivate: [AuthGuard],data: { roles: ['USER']}},
     { path: 'admin', component: AdminComponent, canActivate: [AuthGuard],data: { roles: ['ADMIN'] }},
     { path: 'user', component: UserComponent ,canActivate: [AuthGuard],data: { roles: ['USER']}},
+    { path: 'customer-inquiries', component: CustomerInquiriesComponent ,canActivate: [AuthGuard],data: { roles: ['ADMIN']}},
     { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
